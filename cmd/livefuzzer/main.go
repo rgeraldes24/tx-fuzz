@@ -62,7 +62,7 @@ func initApp() *cli.App {
 var app = initApp()
 
 func main() {
-	// eth.sendTransaction({from:personal.listAccounts[0], to:"0xb02A2EdA1b317FBd16760128836B0Ac59B560e9D", value: "100000000000000"})
+	// zond.sendTransaction({from:personal.listAccounts[0], to:"0xb02A2EdA1b317FBd16760128836B0Ac59B560e9D", value: "100000000000000"})
 	if err := app.Run(os.Args); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
@@ -75,7 +75,7 @@ func runAirdrop(c *cli.Context) error {
 		return err
 	}
 	txPerAccount := config.N
-	airdropValue := new(big.Int).Mul(big.NewInt(int64(txPerAccount*100000)), big.NewInt(params.GWei))
+	airdropValue := new(big.Int).Mul(big.NewInt(int64(txPerAccount*100000)), big.NewInt(params.GPlanck))
 	spammer.Airdrop(config, airdropValue)
 	return nil
 }
@@ -97,7 +97,7 @@ func runBasicSpam(c *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	airdropValue := new(big.Int).Mul(big.NewInt(int64((1+config.N)*1000000)), big.NewInt(params.GWei))
+	airdropValue := new(big.Int).Mul(big.NewInt(int64((1+config.N)*1000000)), big.NewInt(params.GPlanck))
 	return spam(config, spammer.SendBasicTransactions, airdropValue)
 }
 
