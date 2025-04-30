@@ -11,7 +11,7 @@ import (
 	"github.com/theQRL/go-zond/zondclient/gzondclient"
 )
 
-// CreateAccessList creates a new access list for a transaction via the eth_createAccessList.
+// CreateAccessList creates a new access list for a transaction via the zond_createAccessList.
 func CreateAccessList(client *rpc.Client, tx *types.Transaction, from common.Address) (*types.AccessList, error) {
 	msg := zond.CallMsg{
 		From:       from,

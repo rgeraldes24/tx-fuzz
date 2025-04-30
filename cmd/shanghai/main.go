@@ -123,7 +123,7 @@ func repeatOpcode(size int, opcode byte) []byte {
 }
 
 func getRealBackend() (*rpc.Client, *dilithium.Dilithium) {
-	// eth.sendTransaction({from:personal.listAccounts[0], to:"0xb02A2EdA1b317FBd16760128836B0Ac59B560e9D", value: "100000000000000"})
+	// zond.sendTransaction({from:personal.listAccounts[0], to:"Zb02A2EdA1b317FBd16760128836B0Ac59B560e9D", value: "100000000000000"})
 
 	acc, err := dilithium.NewDilithiumFromHexSeed(txfuzz.SEED[2:])
 	if err != nil {

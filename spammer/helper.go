@@ -86,7 +86,7 @@ func tryUnstuck(config *Config, d *dilithium.Dilithium) error {
 			return nil
 		}
 
-		// Self-transfer of 1 wei to unstuck
+		// Self-transfer of 1 planck to unstuck
 		if noTx > batchSize {
 			noTx = batchSize
 		}
